@@ -132,7 +132,7 @@ class UserController extends Controller
 
       // Verificar se o usuário autenticado tem permissão para excluir outros usuários
       if ($authenticatedUser->id === $userToDelete->id) {
-        return response()->json(['error' => 'Você não tem permissão para excluir este usuário.'], 403);
+        return response()->json(['error' => 'Você não tem permição para excluir o seu próprio usuário.'], 403);
       }
 
       $userToDelete->delete();
